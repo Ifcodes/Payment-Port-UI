@@ -47,7 +47,10 @@ const ConfirmPaymentCard = ({ proceed = () => {} }: { proceed?: Function }) => {
       </div>
       <div className="btn-cont">
         <Button btnText="Pay" isPrimary onClick={() => proceed("completed")} />
-        <Button btnText="Cancel Payment" />
+        <Button
+          btnText="Cancel Payment"
+          onClick={() => window.location.reload()}
+        />
       </div>
     </CardPaymentWrapper>
   );
