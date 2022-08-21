@@ -72,6 +72,9 @@ const BillingInfoForm = ({ proceed = () => {} }: { proceed?: Function }) => {
         options={selectOptions}
         label="Card Type"
         selectorName="cardType"
+        handleChange={(e) =>
+          setFormField({ ...formField, cardType: e.target.value })
+        }
         isRequired
       />
 

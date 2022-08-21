@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent, ChangeEventHandler } from "react";
 import { generateId } from "../../Utils/generatedId";
 import DropdownArrow from "../Vectors/DropdownArrow";
 import { SelectorContainer } from "./selectorStyles";
@@ -9,13 +9,17 @@ type SelectorProps = {
   isRequired?: boolean;
   selectorName?: string;
   labelDescription?: string;
+  value?: string;
+  handleChange?: ChangeEventHandler<HTMLSelectElement>;
 };
 const Selector = ({
   options = [""],
   label,
   isRequired,
   selectorName,
+  value,
   labelDescription,
+  handleChange,
 }: SelectorProps) => {
   const id = generateId();
 
@@ -28,7 +32,12 @@ const Selector = ({
         <span className="label-description">{labelDescription}</span>
       )}
       <div className="selector">
-        <select name={selectorName} id={id}>
+        <select
+          value={value}
+          onChange={handleChange}
+          name={selectorName}
+          id={id}
+        >
           {options.map((item) => (
             <option key={item} value={item}>
               {item}

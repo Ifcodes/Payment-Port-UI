@@ -11,6 +11,7 @@ const PersonalInfoForm = ({ proceed = () => {} }: { proceed?: Function }) => {
     address_1: "",
     address_2: "",
     localgovt: "",
+    state: "",
   });
 
   const handleFormChange = (name: string, e: ChangeEvent<HTMLInputElement>) => {
@@ -40,6 +41,7 @@ const PersonalInfoForm = ({ proceed = () => {} }: { proceed?: Function }) => {
       address_1: "",
       address_2: "",
       localgovt: "",
+      state: "",
     });
     proceed("Billing Info");
   };
@@ -89,8 +91,12 @@ const PersonalInfoForm = ({ proceed = () => {} }: { proceed?: Function }) => {
         <div className="selector-cont">
           <Selector
             options={selectOptions}
+            value={formField.state}
             label="State"
             selectorName="State"
+            handleChange={(e) =>
+              setFormField({ ...formField, state: e.target.value })
+            }
           />
         </div>
       </div>
