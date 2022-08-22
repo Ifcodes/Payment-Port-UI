@@ -43,11 +43,19 @@ export const InputWrapper = styled.div<InputStyleProps>`
     ::placeholder {
       color: #727070;
     }
-  }
 
-  input[type="month"]::-webkit-inner-spin-button,
-  input[type="month"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
+    :-webkit-autofill,
+    :-webkit-autofill:hover,
+    :-webkit-autofill:focus,
+    :-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      -webkit-text-fill-color: #000 !important;
+    }
+
+    [type="month"]::-webkit-inner-spin-button,
+    [type="month"]::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+    }
   }
 `;

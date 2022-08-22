@@ -70,6 +70,7 @@ const BillingInfoForm = ({ proceed = () => {} }: { proceed?: Function }) => {
 
       <Selector
         options={selectOptions}
+        value={formField.cardType}
         label="Card Type"
         selectorName="cardType"
         handleChange={(e) =>

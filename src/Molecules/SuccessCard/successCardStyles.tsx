@@ -12,8 +12,7 @@ export const SuccessCardOverlay = styled.section`
 `;
 
 export const SuccesCardWrapper = styled.div`
-  width: 50%;
-  max-width: 40rem;
+  width: 45rem;
   height: 25rem;
   border-radius: 10px;
   box-shadow: 0px 6px 10px rgba(33, 30, 67, 0.08);
@@ -37,8 +36,17 @@ export const SuccesCardWrapper = styled.div`
       align-items: center;
     }
 
+    .text-content {
+      width: 100%;
+      margin-bottom: 1rem;
+
+      .text-desc {
+        width: 80%;
+      }
+    }
+
     span {
-      width: 80%;
+      width: 50%;
     }
 
     a {
