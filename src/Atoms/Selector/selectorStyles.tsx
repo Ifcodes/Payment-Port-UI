@@ -44,6 +44,14 @@ export const SelectorContainer = styled.div`
       outline: none;
       cursor: pointer;
       z-index: 10;
+
+      :-webkit-autofill,
+      :-webkit-autofill:hover,
+      :-webkit-autofill:focus,
+      :-webkit-autofill:active {
+        transition: background-color 5000s ease-in-out 0s;
+        -webkit-text-fill-color: #000 !important;
+      }
     }
 
     option {
